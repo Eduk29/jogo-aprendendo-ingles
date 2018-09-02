@@ -1,31 +1,33 @@
 <div class="container mt-5">
   <div class="jumbotron">
-    <!-- Header Area -->
-    <div class="row">
-      <div class="col-6">
-        <app-progress></app-progress>
-      </div>
-      <div class="col-6 d-flex flex-row justify-content-end">
-        <app-try-status></app-try-status>
-      </div>
-    </div>
-    <!-- Input Area -->
-    <div class="row">
-      <div class="col">
-        <p>{{fraseInstrucao}}</p>
-        <p>frase</p>
-        <mat-form-field class="w-100">
-          <input matInput placeholder="Resposta">
-        </mat-form-field>
-      </div>
-    </div>
-    <!-- Footer Area -->
-    <div class="row">
-      <div class="col">
-        <div class="d-flex flex-row justify-content-end">
-          <button mat-stroked-button color="primary">Verificar</button>
+    <form (ngSubmit)="verificaResposta()">
+      <!-- Header Area -->
+      <div class="row">
+        <div class="col-6">
+          <app-progress></app-progress>
+        </div>
+        <div class="col-6 d-flex flex-row justify-content-end">
+          <app-try-status></app-try-status>
         </div>
       </div>
-    </div>
+      <!-- Input Area -->
+      <div class="row">
+        <div class="col">
+          <p>{{fraseInstrucao}}</p>
+          <p>{{fraseRodada.fraseIngles}}</p>
+          <mat-form-field class="w-100">
+            <input name="resposta" matInput placeholder="Resposta" [(ngModel)]="respostaRodada">
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Footer Area -->
+      <div class="row">
+        <div class="col">
+          <div class="d-flex flex-row justify-content-end">
+            <button type="submit" mat-stroked-button color="primary">Verificar</button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
