@@ -8,7 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TryStatusComponent implements OnInit {
 
   @Input()
-  public tentativas: Array<boolean>;
+  public tentativas: number;
+
+  public vidas: Array<boolean> = [true, true, true];
 
   constructor() { }
 
@@ -16,4 +18,9 @@ export class TryStatusComponent implements OnInit {
     console.log(this.tentativas);
   }
 
+  ngOnChanges(): void {
+    if (this.tentativas !== this.vidas.length){
+      this.vidas[this.tentativas] = false;
+    }
+  }
 }

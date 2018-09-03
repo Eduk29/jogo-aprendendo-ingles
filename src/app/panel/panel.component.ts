@@ -18,7 +18,7 @@ export class PanelComponent implements OnInit {
 
   public progresso: number = 0;
 
-  public tentativas: Array<boolean> = [true, true, true];
+  public tentativas: number = 3;
 
   constructor() { }
 
@@ -55,6 +55,11 @@ export class PanelComponent implements OnInit {
     } else {
       alert('Resposta Incorreta, tente novamente!');
       // TODO: Reduzir corações!
+      this.tentativas--;
+
+      if(this.tentativas < 0) {
+        console.log('Fim de jogo');
+      }
     }
   }
 
