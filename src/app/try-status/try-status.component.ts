@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-try-status',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TryStatusComponent implements OnInit {
 
+  @Input()
+  public tentativas: Array<boolean>;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.tentativas);
   }
 
 }

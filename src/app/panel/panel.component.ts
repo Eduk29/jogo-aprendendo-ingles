@@ -16,6 +16,10 @@ export class PanelComponent implements OnInit {
   public respostaRodada: string;
   public fraseRodada: Frase;
 
+  public progresso: number = 0;
+
+  public tentativas: Array<boolean> = [true, true, true];
+
   constructor() { }
 
   ngOnInit() {
@@ -35,17 +39,31 @@ export class PanelComponent implements OnInit {
   /**
    * Verifica se a resposta fornecida pelo usuário. Se a resposta estiver correta, atualiza o progresso do
    * jogador e atualiza a rodada. Porém se a resposta estiver errada, deduz um da vida do jogador.
-   * @returns void
+   * @return void
    */
-  public verificaResposta(): void{
-    if(this.respostaRodada === this.fraseRodada.traducaoPortugues){
+  public verificaResposta(): void {
+    if (this.respostaRodada === this.fraseRodada.traducaoPortugues) {
       alert('Resposta Correta!');
-      this.atualizaRodada();
-      // TODO: Atualizar progresso do jogador!
+
+      if (this.rodada === (this.frase.length - 1)) {
+        alert('Fim de Jogo!!');
+      } else {
+        this.atualizaRodada();
+      }
+
+      this.atualizaProgresso();
     } else {
       alert('Resposta Incorreta, tente novamente!');
       // TODO: Reduzir corações!
     }
+  }
+
+  /**
+   * Atualiza a barra de progresso
+   * @return void
+   */
+  private atualizaProgresso(): void {
+    this.progresso = this.progresso + 25;
   }
 
 }
