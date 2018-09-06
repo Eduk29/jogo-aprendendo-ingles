@@ -1,5 +1,5 @@
 import { Frases } from './mockFrases';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Frase } from '../commons/frase.model';
 
 @Component({
@@ -19,6 +19,9 @@ export class PanelComponent implements OnInit {
   public progresso: number = 0;
 
   public tentativas: number = 3;
+
+  @Output()
+  public encerrarJogo: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
@@ -47,6 +50,7 @@ export class PanelComponent implements OnInit {
 
       if (this.rodada === (this.frase.length - 1)) {
         alert('Fim de Jogo!!');
+        this.encerrarJogo.emit('vitoria')
       } else {
         this.atualizaRodada();
       }
@@ -59,6 +63,7 @@ export class PanelComponent implements OnInit {
 
       if(this.tentativas < 0) {
         console.log('Fim de jogo');
+        this.encerrarJogo.emit('derrota');
       }
     }
   }

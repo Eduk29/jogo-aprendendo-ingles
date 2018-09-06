@@ -1,2 +1,14 @@
 <app-header></app-header>
-<app-panel></app-panel>
+<div *ngIf="jogoAtivo; else jogoEncerrado">
+  <app-panel (encerrarJogo)="encerraJogo($event)"></app-panel>
+</div>
+
+<ng-template #jogoEncerrado>
+  <div *ngIf="tipoEncerramento === 'vitoria'" class="d-flex flex-row justify-content-center mt-5">
+    <h3 class="text-success">Parabéns você venceu! =)</h3>
+  </div>
+  <div *ngIf="tipoEncerramento === 'derrota'" class="d-flex flex-row justify-content-center mt-5">
+    <h3 class="text-danger">Que pena, você perdeu. =(</h3>
+  </div>
+  <button (click)="reiniciarJogo()" mat-stroked-button color="primary">Verificar</button>
+</ng-template>
