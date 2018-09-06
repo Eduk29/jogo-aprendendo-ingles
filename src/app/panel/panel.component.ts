@@ -46,10 +46,8 @@ export class PanelComponent implements OnInit {
    */
   public verificaResposta(): void {
     if (this.respostaRodada === this.fraseRodada.traducaoPortugues) {
-      alert('Resposta Correta!');
 
       if (this.rodada === (this.frase.length - 1)) {
-        alert('Fim de Jogo!!');
         this.encerrarJogo.emit('vitoria')
       } else {
         this.atualizaRodada();
@@ -57,8 +55,6 @@ export class PanelComponent implements OnInit {
 
       this.atualizaProgresso();
     } else {
-      alert('Resposta Incorreta, tente novamente!');
-      // TODO: Reduzir corações!
       this.tentativas--;
 
       if(this.tentativas < 0) {
