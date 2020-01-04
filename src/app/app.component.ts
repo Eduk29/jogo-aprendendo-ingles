@@ -3,20 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
-  public jogoAtivo: boolean = true;
+  public jogoEmAndamento: boolean = true;
   public tipoEncerramento: string;
 
-  public encerraJogo(evento: string): void {
-    this.jogoAtivo = false;
-    this.tipoEncerramento = evento;
+  public encerrarJogo(tipo: string): void {
+    this.jogoEmAndamento = false;
+    this.tipoEncerramento = tipo;
   }
 
   public reiniciarJogo(): void {
-    this.jogoAtivo = true;
+    this.jogoEmAndamento = true;
     this.tipoEncerramento = undefined;
   }
 }

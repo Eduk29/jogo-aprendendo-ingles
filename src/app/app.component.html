@@ -1,16 +1,30 @@
-<app-header></app-header>
-<div *ngIf="jogoAtivo; else jogoEncerrado">
-  <app-panel (encerrarJogo)="encerraJogo($event)"></app-panel>
+<app-topo></app-topo>
+<div *ngIf="!!jogoEmAndamento; else fimDeJogo ">
+  <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
 </div>
 
-<ng-template #jogoEncerrado>
-  <div *ngIf="tipoEncerramento === 'vitoria'" class="d-flex flex-row justify-content-center mt-5">
-    <h3 class="text-success">Parabéns você venceu! =)</h3>
+<ng-template #fimDeJogo>
+  <div *ngIf="tipoEncerramento === 'derrota'; else fimDeJogoVitoria" class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="title-derrota">
+          Fim de Jogo! Infelizmente você perdeu :S
+        </h3>
+        <button class="btn btn-primary" (click)="reiniciarJogo()">Reiniciar</button>
+      </div>
+    </div>
   </div>
-  <div *ngIf="tipoEncerramento === 'derrota'" class="d-flex flex-row justify-content-center mt-5">
-    <h3 class="text-danger">Que pena, você perdeu. =(</h3>
-  </div>
-  <div class="d-flex flex-row justify-content-center">
-    <button (click)="reiniciarJogo()" mat-raised-button color="primary">Reiniciar</button>
+</ng-template>
+
+<ng-template #fimDeJogoVitoria>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="title-vitoria">
+          Fim de Jogo! Você ganhou =D
+        </h3>
+        <button class="btn btn-primary" (click)="reiniciarJogo()">Reiniciar</button>
+      </div>
+    </div>
   </div>
 </ng-template>

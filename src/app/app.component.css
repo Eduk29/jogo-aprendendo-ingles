@@ -1,0 +1,16 @@
+p {
+  font-size: 25px;
+  color: red;
+}
+
+.title-derrota {
+  color: red;
+}
+
+.title-vitoria {
+  color: green;
+}
+
+.container {
+  margin-top: 50px;
+}
