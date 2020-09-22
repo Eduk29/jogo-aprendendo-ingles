@@ -1,27 +1,40 @@
-# JogoAprendendoIngles
+# Jogo Aprendendo Inglês
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
+This project is based on course "Curso de Desenvolvimento Web com ES6, Typescript e Angular 4" from Udemy, so it may contain some errors. Will be a pleasure receive your code review, suggestions and/or tips. :raised_hands:
 
-## Development server
+This project use some patterns like [BEM](http://getbem.com/), [ITCSS](https://speakerdeck.com/dafed/managing-css-projects-with-itcss), [Semantic Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) and [Git flow](https://nvie.com/posts/a-successful-git-branching-model/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
+This project was bootstrapped with [Angular-CLI](https://cli.angular.io/)
 
-## Code scaffolding
+**1 -** Clone the project and install the dependencies:
+```bash
+$ git clone https://github.com/Eduk29/jogo-aprendendo-ingles.git
+$ cd jogo-aprendendo-ingles
+$ npm install
+```
+**2 -** Keep hacking! :metal:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Start Application
 
-## Build
+If you want to run the application in your pc, follow these instructions. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+1 - To start the application, open another command terminal in the project root directory and run the following instruction:
+```bash
+ng serve -o
+```
 
-## Running unit tests
+3 - Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Dependecies
+  
+  - Angular
+  - Angular CLI
+  - Bootstrap
+  - TsLint
+  - Typescript
 
-## Running end-to-end tests
+## Developer :computer:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+José Eduardo Trindade E Marques  
+edu.temarques@gmail.com
